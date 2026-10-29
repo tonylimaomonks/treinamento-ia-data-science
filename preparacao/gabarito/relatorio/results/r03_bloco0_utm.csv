@@ -1,0 +1,17 @@
+periodo,utm_source,utm_medium,compras,e_meta,dash_reconhece_meta
+A,facebook,cpc,719,true,true
+A,google,cpc,569,false,false
+A,google,organic,224,false,false
+A,crm,email,208,false,false
+A,tiktok,cpc,187,false,false
+A,(direct),(none),110,false,false
+B,google,cpc,441,false,false
+B,facebook,cpc,361,true,true
+B,google,organic,199,false,false
+B,crm,email,176,false,false
+B,tiktok,cpc,144,false,false
+B,(direct),(none),79,false,false
+B,meta,"cpc,cpc",30,true,false
+B,ig,paid_social,29,true,false
+B,Facebook,cpc,29,true,false
+B,fb,cpc,22,true,false

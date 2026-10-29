@@ -1,0 +1,9 @@
+# Segredos e valores desta máquina
+preparacao/.env.local
+# Ambiente e artefatos locais
+preparacao/app/.venv/
+__pycache__/
+.DS_Store
+dist/
+# Sessão ao vivo: gerada por preparacao/reset_sessao.sh (/reset-sessao) a partir de sessao_template/
+sessao-ds101/

@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veredito DS-101</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg: #F7F7FB; --surface: #FFFFFF; --surface-2: #F1F1F8; --border: #E3E3EE;
+  --text: #16162A; --muted: #5E5E78; --faint: #9A9AB0;
+  --accent: #4F46E5; --accent-soft: #EAE9FD;
+  --good: #0F9D6B; --good-soft: #E3F6EE; --bad: #D93A4B; --bad-soft: #FCE8EA; --warn: #C27A0E; --warn-soft: #FBF1DE;
+  --c-meta: #4F46E5; --c-google: #0F9D6B; --c-tiktok: #E0457B; --c-neutral: #B9B9CC;
+  --shadow: 0 1px 2px rgba(22,22,42,.04), 0 4px 16px rgba(22,22,42,.05);
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E0E18; --surface: #171725; --surface-2: #1F1F30; --border: #2B2B40;
+    --text: #EDEDF7; --muted: #A5A5C0; --faint: #6E6E88;
+    --accent: #8B85FF; --accent-soft: #25234A;
+    --good: #3CCB95; --good-soft: #13302A; --bad: #FF6B7A; --bad-soft: #3A1C22; --warn: #F2B24C; --warn-soft: #3A2E17;
+    --c-meta: #8B85FF; --c-google: #3CCB95; --c-tiktok: #FF7AA8; --c-neutral: #4A4A63;
+    --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E0E18; --surface: #171725; --surface-2: #1F1F30; --border: #2B2B40;
+  --text: #EDEDF7; --muted: #A5A5C0; --faint: #6E6E88;
+  --accent: #8B85FF; --accent-soft: #25234A;
+  --good: #3CCB95; --good-soft: #13302A; --bad: #FF6B7A; --bad-soft: #3A1C22; --warn: #F2B24C; --warn-soft: #3A2E17;
+  --c-meta: #8B85FF; --c-google: #3CCB95; --c-tiktok: #FF7AA8; --c-neutral: #4A4A63;
+  --shadow: none;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 400 15px/1.6 Inter, system-ui, -apple-system, sans-serif;
+  font-feature-settings: "tnum" 1, "cv11" 1;
+}
+.wrap { max-width: 960px; margin: 0 auto; padding: 28px 16px 64px; }
+header { padding: 8px 0 28px; border-bottom: 1px solid var(--border); margin-bottom: 36px; }
+.eyebrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 12px; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.tag { padding: 3px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); letter-spacing: .04em; }
+.tag.warn { background: var(--warn-soft); color: var(--warn); }
+h1 { font-size: clamp(26px, 5.4vw, 40px); line-height: 1.15; letter-spacing: -.02em; margin: 14px 0 12px; font-weight: 700; text-wrap: balance; }
+.lede { font-size: 17px; color: var(--muted); margin: 0; max-width: 720px; text-wrap: pretty; }
+.byline { margin-top: 16px; font-size: 13px; color: var(--faint); }
+section { margin: 0 0 48px; }
+h2 { display: flex; align-items: baseline; gap: 10px; font-size: 21px; letter-spacing: -.01em; margin: 0 0 6px; font-weight: 700; }
+h2 .n { font: 500 13px "JetBrains Mono", monospace; color: var(--accent); }
+.sub { color: var(--muted); margin: 0 0 18px; max-width: 720px; }
+h3 { font-size: 15px; margin: 0 0 4px; font-weight: 600; }
+p { margin: 0 0 12px; }
+b, strong { font-weight: 600; }
+code { font: 13px "JetBrains Mono", monospace; background: var(--surface-2); padding: 1px 5px; border-radius: 5px; }
+
+.kpis { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); min-width: 0; }
+.kpi .label { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.kpi .flow { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 10px; margin: 10px 0 6px; }
+.kpi .from { font-size: 18px; color: var(--faint); text-decoration: line-through; text-decoration-thickness: 1.5px; }
+.kpi .arrow { color: var(--faint); }
+.kpi .to { font-size: 30px; font-weight: 700; letter-spacing: -.02em; }
+.kpi .note { font-size: 13px; color: var(--muted); margin: 0; }
+.good { color: var(--good); } .bad { color: var(--bad); } .warn { color: var(--warn); }
+
+.verdict { margin-top: 16px; border-left: 3px solid var(--accent); background: var(--surface); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 18px; border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.verdict p:last-child { margin: 0; }
+
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 520px; }
+th, td { padding: 10px 12px; text-align: right; border-bottom: 1px solid var(--border); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+tr:last-child td { border-bottom: 0; }
+td.total { font-weight: 700; }
+
+.chart { position: relative; width: 100%; height: 280px; }
+.chart.sm { height: 220px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--muted); margin: 10px 0 0; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+
+.grid2 { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.crime .head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.crime .badge { font: 600 12px "JetBrains Mono", monospace; color: var(--bad); background: var(--bad-soft); padding: 3px 8px; border-radius: 6px; }
+.crime p { font-size: 14px; color: var(--muted); }
+.crime .fact { font-size: 14px; color: var(--text); background: var(--surface-2); border-radius: 10px; padding: 10px 12px; margin: 10px 0 12px; }
+
+ul.clean { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+ul.clean li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; font-size: 14px; }
+ul.clean .i { font: 600 12px "JetBrains Mono", monospace; color: var(--accent); background: var(--accent-soft); border-radius: 7px; height: 24px; display: grid; place-items: center; }
+footer { border-top: 1px solid var(--border); padding-top: 18px; font-size: 12px; color: var(--faint); }
+footer code { font-size: 11px; }
+
+@media (min-width: 720px) {
+  .wrap { padding: 44px 28px 80px; }
+  .kpis { grid-template-columns: repeat(3, 1fr); }
+  .grid2 { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .chart { height: 320px; }
+  .card { padding: 22px; }
+}
+@media print { .card, .verdict { box-shadow: none; break-inside: avoid; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow"><span>DS-101 · Trama Moda</span><span class="tag">Veredito</span><span class="tag warn">Gabarito do facilitador</span></div>
+  <h1>Não corte o Meta: a queda é de medição, não de mídia</h1>
+  <p class="lede">A Growth quer tirar 40% da verba do Meta e colocar no TikTok até sexta. A dash mostra vendas web caindo <b data-k="var_web"></b> e o CPA do Meta <b data-k="meta_ratio"></b>. Medindo web + app na mesma régua, o CPA do Meta mudou <b data-k="meta_uni_var"></b>, e o TikTok é o canal mais caro.</p>
+  <div class="byline">Time de Dados · base de <span data-k="data_ref"></span> · mês anterior <span data-k="per_a"></span> · último mês <span data-k="per_b"></span></div>
+</header>
+
+<!-- 1 · Tese -->
+<section>
+  <h2><span class="n">01</span>Tese</h2>
+  <p class="sub">Três números que mudam de sinal quando a régua fica certa.</p>
+  <div class="kpis">
+    <div class="card kpi">
+      <div class="label">CPA do Meta · último mês ÷ anterior</div>
+      <div class="flow"><span class="from" data-k="meta_ratio_x"></span><span class="arrow">→</span><span class="to good" data-k="meta_uni_var"></span></div>
+      <p class="note">A dash "dobrou". Na régua unificada, o CPA variou pouco.</p>
+    </div>
+    <div class="card kpi">
+      <div class="label">TikTok · CPA do último mês</div>
+      <div class="flow"><span class="from" data-k="tt_leg"></span><span class="arrow">→</span><span class="to bad" data-k="tt_uni"></span></div>
+      <p class="note">O "mais barato" da dash é o <b>mais caro</b> quando a verba toda entra na conta.</p>
+    </div>
+    <div class="card kpi">
+      <div class="label">Queda das vendas web do Meta</div>
+      <div class="flow"><span class="to" data-k="share_medicao"></span></div>
+      <p class="note">É efeito de medição (app, ingestão e UTM). Só <span data-k="share_real"></span> é queda real.</p>
+    </div>
+  </div>
+  <div class="verdict">
+    <p><b>Recomendação para a Growth:</b> não cortar o Meta nem mover a verba para o TikTok com base na dash atual. Primeiro, corrigir a régua (itens da seção 07). Depois, reavaliar a alocação com duas semanas de dado limpo.</p>
+  </div>
+</section>
+
+<!-- 2 · Enquadramento -->
+<section>
+  <h2><span class="n">02</span>Enquadramento</h2>
+  <p class="sub">O que a dash legada afirma (<code>trama_legacy.vw_dash_growth_resumo</code>): só venda web, canal por match exato de UTM e spend por INNER JOIN com o catálogo.</p>
+  <div class="card table-wrap">
+    <table id="t-legado">
+      <thead><tr><th>Canal</th><th>Vendas web · anterior</th><th>Último mês</th><th>Var.</th><th>CPA · anterior</th><th>Último mês</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <p class="sub" style="margin-top:14px">A <b>régua unificada</b> soma web + app, atribui por campanha (último clique) nas duas pontas, usa todo o spend (inclusive o que vem sem nome) e tira os dias sem ingestão <b>dos dois períodos</b>.</p>
+</section>
+
+<!-- 3 · Séries -->
+<section>
+  <h2><span class="n">03</span>A série que a dash não mostra</h2>
+  <p class="sub">Pedidos web no ERP × pedidos web que o tracking viu, por dia. A cobertura normal fica perto de <b data-k="cob_normal"></b>. Em <b data-k="n_p1"></b> dias do último mês, ela foi a zero.</p>
+  <div class="card">
+    <div class="chart"><canvas id="c-serie"></canvas></div>
+    <div class="legend"><span><i style="background:var(--c-neutral)"></i>Pedidos web no ERP</span><span><i style="background:var(--accent)"></i>Pedidos web rastreados</span><span><i style="background:var(--bad)"></i>Dia sem ingestão</span></div>
+  </div>
+</section>
+
+<!-- 4 · Teste decisivo -->
+<section>
+  <h2><span class="n">04</span>Teste decisivo: a mesma régua para todos</h2>
+  <p class="sub">CPA do último mês por canal, na dash legada e na régua unificada. O <b>Google</b> é o controle positivo: ele não tem problema de UTM nem de nome de campanha e, mesmo assim, "piora" <b data-k="google_leg_var"></b> na dash. Logo, boa parte da queda é comum a todos os canais, e não é específica do Meta.</p>
+  <div class="card">
+    <div class="chart"><canvas id="c-cpa"></canvas></div>
+    <div class="legend"><span><i style="background:var(--c-neutral)"></i>Dash legada</span><span><i style="background:var(--accent)"></i>Régua unificada</span></div>
+  </div>
+</section>
+
+<!-- 5 · Mecanismo -->
+<section>
+  <h2><span class="n">05</span>Mecanismo: quatro problemas de medição</h2>
+  <p class="sub">Cada um tem o dado intermediário que o comprova e o teste que o refutaria.</p>
+  <div class="grid2">
+    <div class="card crime">
+      <div class="head"><span class="badge">P1</span><h3>Ingestão web "verde" com zero linhas</h3></div>
+      <div class="fact">Nos <b data-k="n_p1"></b> dias, o job saiu <code data-k="p1_status"></code> em <b data-k="p1_dur"></b>, contra <span data-k="p1_dur_normal"></span> num dia normal. O ERP registrou <b data-k="p1_pedidos"></b> pedidos web nesses dias.</div>
+      <div class="chart sm"><canvas id="c-log"></canvas></div>
+      <p style="margin-top:10px"><b>Refutaria:</b> ERP também zerado nesses dias (queda real de venda).</p>
+    </div>
+    <div class="card crime">
+      <div class="head"><span class="badge">P2</span><h3>UTMs da agência nova fora da regra</h3></div>
+      <div class="fact">No último mês, <b data-k="p2_share"></b> das compras web do Meta vieram com UTM que a dash não reconhece (<span data-k="p2_n_var"></span> variantes, contra <span data-k="p2_n_var_a"></span> no mês anterior).</div>
+      <div class="chart sm"><canvas id="c-utm"></canvas></div>
+      <p style="margin-top:10px"><b>Refutaria:</b> bloco 0 com uma única variante <code>facebook / cpc</code>.</p>
+    </div>
+    <div class="card crime">
+      <div class="head"><span class="badge">P3</span><h3>A venda migrou para o app</h3></div>
+      <div class="fact">Nas campanhas de objetivo web do Meta, a fatia que converte no app foi de <b data-k="p3_meta_a"></b> para <b data-k="p3_meta_b"></b> (deep link da agência nova). Nos outros canais, o banner "10% off no app" também empurrou a venda.</div>
+      <div class="chart sm"><canvas id="c-app"></canvas></div>
+      <p style="margin-top:10px"><b>Refutaria:</b> fatia de app estável entre os períodos.</p>
+    </div>
+    <div class="card crime">
+      <div class="head"><span class="badge">P4</span><h3>Spend do TikTok sem <code>campaign_name</code></h3></div>
+      <div class="fact">A fatia da verba do TikTok que chega sem nome foi de <b data-k="p4_tt_a"></b> para <b data-k="p4_tt_b"></b>. O INNER JOIN da dash descarta essa verba, e o TikTok parece barato.</div>
+      <div class="chart sm"><canvas id="c-verba"></canvas></div>
+      <p style="margin-top:10px"><b>Refutaria:</b> cobertura do join por verba perto de 100% em todos os canais.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>Cascata das vendas web do Meta: do mês anterior ao último mês</h3>
+    <p class="sub" style="margin:4px 0 12px;font-size:14px">De <b data-k="cas_ini"></b> para <b data-k="cas_fim"></b>. Cada degrau é a parte da queda explicada por um mecanismo.</p>
+    <div class="chart"><canvas id="c-cascata"></canvas></div>
+  </div>
+</section>
+
+<!-- 6 · Caveats -->
+<section>
+  <h2><span class="n">06</span>Caveats</h2>
+  <ul class="clean">
+    <li><span class="i">1</span><span>A cascata usa a verdade oculta do caso (<code>trama_setup.orders_truth</code>). Na vida real, os degraus P1 e P3 seriam <b>estimados</b> pela cobertura média e pela fatia de app, não medidos.</span></li>
+    <li><span class="i">2</span><span>A régua unificada é último clique por campanha. Outra atribuição mudaria o nível do CPA, mas não a comparação entre períodos, porque a régua é a mesma nas duas pontas.</span></li>
+    <li><span class="i">3</span><span>Tirar os dias sem ingestão reduz a amostra do último mês. O número de CPA é mais ruidoso do que parece.</span></li>
+    <li><span class="i">4</span><span>O Meta tem um efeito real pequeno (<span data-k="meta_uni_var"></span> de CPA). Não é motivo para cortar 40%, mas vale acompanhar.</span></li>
+  </ul>
+</section>
+
+<!-- 7 · Próximos passos -->
+<section>
+  <h2><span class="n">07</span>Próximos passos</h2>
+  <ul class="clean">
+    <li><span class="i">P1</span><span><b>Alerta de volume</b> na ingestão web (linhas e duração), além do status. Um job "verde" com 0 linhas precisa disparar.</span></li>
+    <li><span class="i">P2</span><span><b>Dicionário de UTM</b> com source canônico e <code>unassigned</code> monitorado. O template da agência entra no dicionário, e não em regra exata.</span></li>
+    <li><span class="i">P3</span><span><b>Dash de Growth com o app.</b> Conversão web + app na mesma atribuição por campanha.</span></li>
+    <li><span class="i">P4</span><span><b><code>campaign_id</code> no conector do TikTok</b> e join spend × conversão como FULL OUTER com cobertura por verba na dash.</span></li>
+  </ul>
+</section>
+
+<footer>
+  Pipeline: <code>queries/r01–r09.sql</code> → <code>results/*.csv</code> → <code>gen_data.py</code> → <code>const D</code> → Chart.js. Nenhum número deste relatório foi digitado à mão.
+</footer>
+
+</div>
+<script>
+const D = /*__D__*/null;
+
+// ── formatação ─────────────────────────────────────────────────────────────────
+const nf0 = new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 0 });
+const brl = v => "R$ " + new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(v);
+const pct = (v, casas = 0) => new Intl.NumberFormat("pt-BR", { style: "percent", maximumFractionDigits: casas, minimumFractionDigits: casas }).format(v);
+const sinal = (v, casas = 1) => (v > 0 ? "+" : v < 0 ? "−" : "") + pct(Math.abs(v), casas);
+const vezes = v => new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 2 }).format(v) + "×";
+const dataBR = s => { const [a, m, d] = s.split("-"); return `${d}/${m}`; };
+const periodo = (i, f) => `${dataBR(i)}–${dataBR(f)}`;
+const somaDia = (s, n) => { const d = new Date(s + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
+
+// ── textos ─────────────────────────────────────────────────────────────────────
+const cx = D.contexto, T = D.tese, cas = D.cascata;
+const legCanal = c => D.legado.canais.find(x => x.canal === c);
+const p3 = c => D.p3.canais.find(x => x.canal === c);
+const p4 = c => D.p4.canais.find(x => x.canal === c);
+const K = {
+  var_web: sinal(D.legado.var_web),
+  meta_ratio: `"dobrando" (${vezes(T.meta_cpa_legado_ratio)})`,
+  meta_ratio_x: vezes(T.meta_cpa_legado_ratio),
+  meta_uni_var: sinal(T.meta_cpa_unificado_var),
+  tt_leg: brl(T.tiktok_cpa_legado_b),
+  tt_uni: brl(T.tiktok_cpa_unificado_b),
+  share_medicao: pct(1 - T.share_queda_meta_efeito_real) + " é medição",
+  share_real: pct(T.share_queda_meta_efeito_real),
+  data_ref: dataBR(cx.data_ref),
+  per_a: periodo(cx.inicio_a, somaDia(cx.inicio_b, -1)),
+  per_b: periodo(cx.inicio_b, cx.janela_fim),
+  cob_normal: pct(D.p1.cobertura_web_normal_media),
+  n_p1: D.p1.dias.length,
+  google_leg_var: sinal(D.cpa.legado.google.var) + " de CPA",
+  p1_status: D.p1.log_status_nos_dias_p1.join("/"),
+  p1_dur: nf0.format(D.p1.log_duracao_p1_s) + "s",
+  p1_dur_normal: `${nf0.format(D.p1.log_duracao_normal_min_s)}–${nf0.format(D.p1.log_duracao_normal_max_s)}s`,
+  p1_pedidos: nf0.format(D.p1.pedidos_web_erp_nos_dias_p1),
+  p2_share: pct(D.p2.share_fora_da_regra_b),
+  p2_n_var: D.p2.variantes_b.length,
+  p2_n_var_a: D.p2.variantes_a,
+  p3_meta_a: pct(p3("meta").app_share_a),
+  p3_meta_b: pct(p3("meta").app_share_b),
+  p4_tt_a: pct(p4("tiktok").share_sem_nome_a),
+  p4_tt_b: pct(p4("tiktok").share_sem_nome_b),
+  cas_ini: nf0.format(cas[0].valor),
+  cas_fim: nf0.format(cas[cas.length - 1].valor),
+};
+document.querySelectorAll("[data-k]").forEach(el => {
+  const v = K[el.dataset.k];
+  if (v === undefined) throw new Error("sem valor para " + el.dataset.k);
+  el.textContent = v;
+});
+
+// tabela da dash legada
+const tb = document.querySelector("#t-legado tbody");
+const cls = v => v > 0 ? "bad" : "good";
+D.legado.canais.forEach(r => {
+  tb.insertAdjacentHTML("beforeend", `<tr><td>${r.rotulo}</td><td>${nf0.format(r.vendas_a)}</td><td>${nf0.format(r.vendas_b)}</td>
+    <td class="${r.var_vendas < 0 ? "bad" : "good"}">${sinal(r.var_vendas)}</td><td>${brl(r.cpa_a)}</td>
+    <td class="${cls(r.cpa_b - r.cpa_a)}">${brl(r.cpa_b)}</td></tr>`);
+});
+tb.insertAdjacentHTML("beforeend", `<tr><td class="total">Total web (todos os canais)</td><td class="total">${nf0.format(D.legado.web_a)}</td>
+  <td class="total">${nf0.format(D.legado.web_b)}</td><td class="total bad">${sinal(D.legado.var_web)}</td><td></td><td></td></tr>`);
+
+// ── gráficos ───────────────────────────────────────────────────────────────────
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const cor = { meta: css("--c-meta"), google: css("--c-google"), tiktok: css("--c-tiktok") };
+Chart.defaults.font.family = "Inter, system-ui, sans-serif";
+Chart.defaults.font.size = 12;
+Chart.defaults.color = css("--muted");
+Chart.defaults.borderColor = css("--border");
+Chart.defaults.plugins.legend.display = false;
+Chart.defaults.maintainAspectRatio = false;
+Chart.defaults.plugins.tooltip.backgroundColor = css("--text");
+Chart.defaults.plugins.tooltip.titleColor = css("--bg");
+Chart.defaults.plugins.tooltip.bodyColor = css("--bg");
+Chart.defaults.plugins.tooltip.padding = 10;
+Chart.defaults.plugins.tooltip.cornerRadius = 8;
+const semGrade = { grid: { display: false } };
+const eixoY = extra => ({ beginAtZero: true, border: { display: false }, grid: { color: css("--border") }, ...extra });
+
+// 03 · série diária
+new Chart(document.getElementById("c-serie"), {
+  type: "bar",
+  data: {
+    labels: D.serie.map(d => dataBR(d.date)),
+    datasets: [
+      { label: "ERP web", data: D.serie.map(d => d.web_erp), backgroundColor: D.serie.map(d => d.p1 ? css("--bad") : css("--c-neutral")),
+        barPercentage: 1, categoryPercentage: .9, order: 2 },
+      { label: "Rastreado web", type: "line", data: D.serie.map(d => d.web_trk), borderColor: css("--accent"), borderWidth: 2,
+        pointRadius: 0, tension: .25, order: 1 },
+    ],
+  },
+  options: {
+    interaction: { mode: "index", intersect: false },
+    scales: { x: { ...semGrade, ticks: { maxTicksLimit: 9, maxRotation: 0 } }, y: eixoY({ title: { display: true, text: "pedidos/dia" } }) },
+    plugins: { tooltip: { callbacks: { afterBody: it => {
+      const d = D.serie[it[0].dataIndex];
+      return [`Cobertura web: ${pct(d.web_cob)}`, ...(d.p1 ? ["⚠ dia sem ingestão"] : [])];
+    } } } },
+  },
+});
+
+// 04 · CPA legado × unificado
+const canais = ["meta", "google", "tiktok"];
+new Chart(document.getElementById("c-cpa"), {
+  type: "bar",
+  data: {
+    labels: canais.map(c => legCanal(c).rotulo),
+    datasets: [
+      { label: "Dash legada", data: canais.map(c => D.cpa.legado[c].cpa_b), backgroundColor: css("--c-neutral"), borderRadius: 6 },
+      { label: "Régua unificada", data: canais.map(c => D.cpa.unificada[c].cpa_b), backgroundColor: canais.map(c => cor[c]), borderRadius: 6 },
+    ],
+  },
+  options: {
+    scales: { x: semGrade, y: eixoY({ ticks: { callback: v => "R$ " + v } }) },
+    plugins: { tooltip: { callbacks: { label: it => {
+      const c = canais[it.dataIndex], r = it.datasetIndex === 0 ? D.cpa.legado[c] : D.cpa.unificada[c];
+      return `${it.dataset.label}: ${brl(r.cpa_b)} (${sinal(r.var)} vs. mês anterior)`;
+    } } } },
+  },
+});
+
+// P1 · log
+const logB = D.log;
+new Chart(document.getElementById("c-log"), {
+  type: "bar",
+  data: { labels: logB.map(l => dataBR(l.data)),
+    datasets: [{ data: logB.map(l => l.duracao_s), backgroundColor: logB.map(l => l.linhas === 0 ? css("--bad") : css("--c-neutral")), borderRadius: 3 }] },
+  options: {
+    scales: { x: { ...semGrade, ticks: { maxTicksLimit: 6, maxRotation: 0 } }, y: eixoY({ title: { display: true, text: "duração do job (s)" } }) },
+    plugins: { tooltip: { callbacks: { label: it => { const l = logB[it.dataIndex]; return `${l.status} · ${l.duracao_s}s · ${nf0.format(l.linhas)} linhas`; } } } },
+  },
+});
+
+// P2 · variantes de UTM do Meta no último mês
+const vb = D.p2.variantes_b;
+new Chart(document.getElementById("c-utm"), {
+  type: "bar",
+  data: { labels: vb.map(v => v.utm),
+    datasets: [{ data: vb.map(v => v.compras), backgroundColor: vb.map(v => v.reconhecida ? css("--c-meta") : css("--bad")), borderRadius: 4 }] },
+  options: {
+    indexAxis: "y",
+    scales: { x: eixoY({ title: { display: true, text: "compras web · último mês" } }), y: { ...semGrade, ticks: { font: { family: "JetBrains Mono, monospace", size: 11 } } } },
+    plugins: { tooltip: { callbacks: { label: it => `${nf0.format(it.raw)} compras · ${vb[it.dataIndex].reconhecida ? "a dash reconhece" : "a dash NÃO reconhece"}` } } },
+  },
+});
+
+// P3 · fatia que converte no app
+new Chart(document.getElementById("c-app"), {
+  type: "bar",
+  data: { labels: canais.map(c => p3(c).rotulo),
+    datasets: [
+      { label: "Mês anterior", data: canais.map(c => p3(c).app_share_a), backgroundColor: css("--c-neutral"), borderRadius: 4 },
+      { label: "Último mês", data: canais.map(c => p3(c).app_share_b), backgroundColor: canais.map(c => cor[c]), borderRadius: 4 },
+    ] },
+  options: {
+    scales: { x: semGrade, y: eixoY({ ticks: { callback: v => pct(v) }, title: { display: true, text: "conversões no app" } }) },
+    plugins: { legend: { display: true, position: "bottom", labels: { boxWidth: 10, boxHeight: 10, useBorderRadius: true, borderRadius: 3 } },
+      tooltip: { callbacks: { label: it => `${it.dataset.label}: ${pct(it.raw, 1)}` } } },
+  },
+});
+
+// P4 · verba por status do join
+const verbaDs = (chave, rotulo, fundo) => ({ label: rotulo, backgroundColor: fundo,
+  data: canais.flatMap(c => [p4(c)[`${chave}_a`], p4(c)[`${chave}_b`]]) });
+new Chart(document.getElementById("c-verba"), {
+  type: "bar",
+  data: { labels: canais.flatMap(c => [[p4(c).rotulo, "anterior"], [p4(c).rotulo, "último"]]),
+    datasets: [verbaDs("share_matched", "Casou com conversão", css("--accent")),
+               verbaDs("share_sem_nome", "Sem campaign_name", css("--bad")),
+               verbaDs("share_outros", "Outros spend_only", css("--c-neutral"))] },
+  options: {
+    scales: { x: { ...semGrade, stacked: true }, y: eixoY({ stacked: true, max: 1, ticks: { callback: v => pct(v) } }) },
+    plugins: { legend: { display: true, position: "bottom", labels: { boxWidth: 10, boxHeight: 10, useBorderRadius: true, borderRadius: 3 } },
+      tooltip: { callbacks: { label: it => `${it.dataset.label}: ${pct(it.raw || 0, 1)}` } } },
+  },
+});
+
+// Cascata: barra cheia no início e no fim, degraus flutuantes no meio
+const ROT_CASCATA = { 0: "Mês anterior", 1: "Efeito real", 2: "P3 · app", 3: "P1 · ingestão", 4: "Cobertura", 5: "P2 · UTM" };
+const ultimo = cas[cas.length - 1];
+const barras = [
+  ...cas.map((d, i) => ({ rotulo: ROT_CASCATA[d.ordem], faixa: i === 0 ? [0, d.valor] : [cas[i - 1].valor, d.valor], d,
+    fundo: i === 0 ? css("--c-neutral") : d.ordem === 1 ? css("--warn") : d.ordem === 4 ? css("--faint") : css("--bad") })),
+  { rotulo: "Último mês", faixa: [0, ultimo.valor], d: { degrau: "Dash · último mês", valor: ultimo.valor, delta: null, descricao: "O que a Growth viu no último mês" },
+    fundo: css("--c-neutral") },
+];
+const estreito = window.matchMedia("(max-width: 560px)").matches;   // no celular a cascata fica deitada
+const eixoCat = { ...semGrade, ticks: { maxRotation: 0, autoSkip: false, callback(v) { const l = this.getLabelForValue(v); return !estreito && l.includes(" · ") ? l.split(" · ") : l; } } };
+const eixoVal = eixoY({ title: { display: true, text: "vendas web do Meta" } });
+new Chart(document.getElementById("c-cascata"), {
+  type: "bar",
+  data: { labels: barras.map(b => b.rotulo),
+    datasets: [{ data: barras.map(b => b.faixa), backgroundColor: barras.map(b => b.fundo), borderRadius: 5, borderSkipped: false }] },
+  options: {
+    indexAxis: estreito ? "y" : "x",
+    scales: estreito ? { y: eixoCat, x: eixoVal } : { x: eixoCat, y: eixoVal },
+    plugins: { tooltip: { callbacks: {
+      title: it => barras[it[0].dataIndex].d.degrau,
+      label: it => { const d = barras[it.dataIndex].d;
+        return d.delta === null ? `${nf0.format(d.valor)} vendas` : `${d.delta > 0 ? "+" : "−"}${nf0.format(Math.abs(d.delta))} vendas → ${nf0.format(d.valor)}`; },
+      afterLabel: it => barras[it.dataIndex].d.descricao } } },
+  },
+});
+</script>
+</body>
+</html>

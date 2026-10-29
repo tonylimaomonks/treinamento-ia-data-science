@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bq ls:*)",
+      "Bash(bq show:*)",
+      "Bash(bq head:*)",
+      "Bash(bq query --dry_run:*)",
+      "Bash(bq query:*)",
+      "Bash(python3:*)",
+      "Bash(streamlit run:*)"
+    ],
+    "deny": [
+      "Bash(bq rm:*)",
+      "Bash(gcloud projects delete:*)",
+      "Read(./.env.local)",
+      "Edit(./.env.local)"
+    ]
+  }
+}

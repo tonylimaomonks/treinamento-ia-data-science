@@ -1,0 +1,7 @@
+# Streamlit do Ato 3 (DS-101): dash de referência e a dash que a sessão constrói. Python >= 3.10.
+streamlit==1.64.0
+google-cloud-bigquery[pandas]==3.45.2
+db-dtypes==1.7.1
+pyarrow==25.0.1
+pandas==2.3.3          # 2.2.x segfaulta no Python 3.14 ao converter TIMESTAMP fora da thread principal
+altair==6.3.0

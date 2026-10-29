@@ -1,0 +1,12 @@
+periodo,channel,match_status,sem_campaign_name,spend
+A,google,matched,false,42732.5
+A,meta,matched,false,61484.16
+A,meta,spend_only,false,519.3
+A,tiktok,matched,false,18472.13
+A,tiktok,spend_only,false,773.43
+A,tiktok,spend_only,true,4811.39
+B,google,matched,false,43010.94
+B,meta,matched,false,61912.47
+B,tiktok,matched,false,5738.28
+B,tiktok,spend_only,false,216.25
+B,tiktok,spend_only,true,17863.4

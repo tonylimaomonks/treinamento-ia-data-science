@@ -1,0 +1,1340 @@
+{
+  "contexto": {
+    "data_ref": "2026-10-20",
+    "janela_inicio": "2026-07-22",
+    "janela_fim": "2026-10-19",
+    "inicio_a": "2026-08-21",
+    "inicio_b": "2026-09-20"
+  },
+  "legado": {
+    "canais": [
+      {
+        "canal": "meta",
+        "rotulo": "Meta",
+        "vendas_a": 719.0,
+        "vendas_b": 361.0,
+        "var_vendas": -0.498,
+        "cpa_a": 61.78,
+        "cpa_b": 122.24
+      },
+      {
+        "canal": "google",
+        "rotulo": "Google",
+        "vendas_a": 569.0,
+        "vendas_b": 441.0,
+        "var_vendas": -0.225,
+        "cpa_a": 63.28,
+        "cpa_b": 82.15
+      },
+      {
+        "canal": "tiktok",
+        "rotulo": "TikTok",
+        "vendas_a": 187.0,
+        "vendas_b": 144.0,
+        "var_vendas": -0.23,
+        "cpa_a": 80.51,
+        "cpa_b": 32.31
+      }
+    ],
+    "web_a": 2017.0,
+    "web_b": 1510.0,
+    "var_web": -0.2514
+  },
+  "cpa": {
+    "legado": {
+      "google": {
+        "cpa_a": 63.28,
+        "cpa_b": 82.15,
+        "var": 0.298
+      },
+      "meta": {
+        "cpa_a": 61.78,
+        "cpa_b": 122.24,
+        "var": 0.979
+      },
+      "tiktok": {
+        "cpa_a": 80.51,
+        "cpa_b": 32.31,
+        "var": -0.599
+      }
+    },
+    "unificada": {
+      "google": {
+        "cpa_a": 44.19,
+        "cpa_b": 42.95,
+        "var": -0.028
+      },
+      "meta": {
+        "cpa_a": 52.5,
+        "cpa_b": 54.83,
+        "var": 0.044
+      },
+      "tiktok": {
+        "cpa_a": 70.34,
+        "cpa_b": 71.79,
+        "var": 0.021
+      }
+    }
+  },
+  "tese": {
+    "meta_cpa_legado_ratio": 1.9786,
+    "meta_cpa_unificado_var": 0.044,
+    "tiktok_cpa_legado_b": 32.31,
+    "tiktok_cpa_unificado_b": 71.79,
+    "canal_mais_caro_unificado": "tiktok",
+    "canal_mais_barato_legado": "tiktok",
+    "share_queda_meta_efeito_real": 0.1453
+  },
+  "serie": [
+    {
+      "date": "2026-07-22",
+      "p1": false,
+      "app_erp": 51.0,
+      "app_trk": 47.0,
+      "app_cob": 0.9216,
+      "web_erp": 76.0,
+      "web_trk": 65.0,
+      "web_cob": 0.8553
+    },
+    {
+      "date": "2026-07-23",
+      "p1": false,
+      "app_erp": 47.0,
+      "app_trk": 41.0,
+      "app_cob": 0.8723,
+      "web_erp": 77.0,
+      "web_trk": 69.0,
+      "web_cob": 0.8961
+    },
+    {
+      "date": "2026-07-24",
+      "p1": false,
+      "app_erp": 46.0,
+      "app_trk": 42.0,
+      "app_cob": 0.913,
+      "web_erp": 78.0,
+      "web_trk": 70.0,
+      "web_cob": 0.8974
+    },
+    {
+      "date": "2026-07-25",
+      "p1": false,
+      "app_erp": 42.0,
+      "app_trk": 42.0,
+      "app_cob": 1.0,
+      "web_erp": 78.0,
+      "web_trk": 66.0,
+      "web_cob": 0.8462
+    },
+    {
+      "date": "2026-07-26",
+      "p1": false,
+      "app_erp": 51.0,
+      "app_trk": 48.0,
+      "app_cob": 0.9412,
+      "web_erp": 75.0,
+      "web_trk": 69.0,
+      "web_cob": 0.92
+    },
+    {
+      "date": "2026-07-27",
+      "p1": false,
+      "app_erp": 47.0,
+      "app_trk": 42.0,
+      "app_cob": 0.8936,
+      "web_erp": 74.0,
+      "web_trk": 65.0,
+      "web_cob": 0.8784
+    },
+    {
+      "date": "2026-07-28",
+      "p1": false,
+      "app_erp": 55.0,
+      "app_trk": 49.0,
+      "app_cob": 0.8909,
+      "web_erp": 69.0,
+      "web_trk": 65.0,
+      "web_cob": 0.942
+    },
+    {
+      "date": "2026-07-29",
+      "p1": false,
+      "app_erp": 51.0,
+      "app_trk": 49.0,
+      "app_cob": 0.9608,
+      "web_erp": 74.0,
+      "web_trk": 67.0,
+      "web_cob": 0.9054
+    },
+    {
+      "date": "2026-07-30",
+      "p1": false,
+      "app_erp": 43.0,
+      "app_trk": 41.0,
+      "app_cob": 0.9535,
+      "web_erp": 82.0,
+      "web_trk": 70.0,
+      "web_cob": 0.8537
+    },
+    {
+      "date": "2026-07-31",
+      "p1": false,
+      "app_erp": 48.0,
+      "app_trk": 47.0,
+      "app_cob": 0.9792,
+      "web_erp": 80.0,
+      "web_trk": 71.0,
+      "web_cob": 0.8875
+    },
+    {
+      "date": "2026-08-01",
+      "p1": false,
+      "app_erp": 44.0,
+      "app_trk": 41.0,
+      "app_cob": 0.9318,
+      "web_erp": 77.0,
+      "web_trk": 69.0,
+      "web_cob": 0.8961
+    },
+    {
+      "date": "2026-08-02",
+      "p1": false,
+      "app_erp": 50.0,
+      "app_trk": 46.0,
+      "app_cob": 0.92,
+      "web_erp": 75.0,
+      "web_trk": 69.0,
+      "web_cob": 0.92
+    },
+    {
+      "date": "2026-08-03",
+      "p1": false,
+      "app_erp": 47.0,
+      "app_trk": 44.0,
+      "app_cob": 0.9362,
+      "web_erp": 80.0,
+      "web_trk": 66.0,
+      "web_cob": 0.825
+    },
+    {
+      "date": "2026-08-04",
+      "p1": false,
+      "app_erp": 46.0,
+      "app_trk": 43.0,
+      "app_cob": 0.9348,
+      "web_erp": 77.0,
+      "web_trk": 69.0,
+      "web_cob": 0.8961
+    },
+    {
+      "date": "2026-08-05",
+      "p1": false,
+      "app_erp": 49.0,
+      "app_trk": 45.0,
+      "app_cob": 0.9184,
+      "web_erp": 75.0,
+      "web_trk": 61.0,
+      "web_cob": 0.8133
+    },
+    {
+      "date": "2026-08-06",
+      "p1": false,
+      "app_erp": 47.0,
+      "app_trk": 44.0,
+      "app_cob": 0.9362,
+      "web_erp": 77.0,
+      "web_trk": 70.0,
+      "web_cob": 0.9091
+    },
+    {
+      "date": "2026-08-07",
+      "p1": false,
+      "app_erp": 50.0,
+      "app_trk": 45.0,
+      "app_cob": 0.9,
+      "web_erp": 77.0,
+      "web_trk": 70.0,
+      "web_cob": 0.9091
+    },
+    {
+      "date": "2026-08-08",
+      "p1": false,
+      "app_erp": 48.0,
+      "app_trk": 44.0,
+      "app_cob": 0.9167,
+      "web_erp": 73.0,
+      "web_trk": 68.0,
+      "web_cob": 0.9315
+    },
+    {
+      "date": "2026-08-09",
+      "p1": false,
+      "app_erp": 51.0,
+      "app_trk": 47.0,
+      "app_cob": 0.9216,
+      "web_erp": 75.0,
+      "web_trk": 67.0,
+      "web_cob": 0.8933
+    },
+    {
+      "date": "2026-08-10",
+      "p1": false,
+      "app_erp": 52.0,
+      "app_trk": 50.0,
+      "app_cob": 0.9615,
+      "web_erp": 72.0,
+      "web_trk": 60.0,
+      "web_cob": 0.8333
+    },
+    {
+      "date": "2026-08-11",
+      "p1": false,
+      "app_erp": 46.0,
+      "app_trk": 42.0,
+      "app_cob": 0.913,
+      "web_erp": 83.0,
+      "web_trk": 71.0,
+      "web_cob": 0.8554
+    },
+    {
+      "date": "2026-08-12",
+      "p1": false,
+      "app_erp": 49.0,
+      "app_trk": 45.0,
+      "app_cob": 0.9184,
+      "web_erp": 80.0,
+      "web_trk": 67.0,
+      "web_cob": 0.8375
+    },
+    {
+      "date": "2026-08-13",
+      "p1": false,
+      "app_erp": 34.0,
+      "app_trk": 29.0,
+      "app_cob": 0.8529,
+      "web_erp": 91.0,
+      "web_trk": 81.0,
+      "web_cob": 0.8901
+    },
+    {
+      "date": "2026-08-14",
+      "p1": false,
+      "app_erp": 44.0,
+      "app_trk": 41.0,
+      "app_cob": 0.9318,
+      "web_erp": 77.0,
+      "web_trk": 72.0,
+      "web_cob": 0.9351
+    },
+    {
+      "date": "2026-08-15",
+      "p1": false,
+      "app_erp": 44.0,
+      "app_trk": 40.0,
+      "app_cob": 0.9091,
+      "web_erp": 79.0,
+      "web_trk": 66.0,
+      "web_cob": 0.8354
+    },
+    {
+      "date": "2026-08-16",
+      "p1": false,
+      "app_erp": 40.0,
+      "app_trk": 38.0,
+      "app_cob": 0.95,
+      "web_erp": 80.0,
+      "web_trk": 72.0,
+      "web_cob": 0.9
+    },
+    {
+      "date": "2026-08-17",
+      "p1": false,
+      "app_erp": 44.0,
+      "app_trk": 40.0,
+      "app_cob": 0.9091,
+      "web_erp": 76.0,
+      "web_trk": 71.0,
+      "web_cob": 0.9342
+    },
+    {
+      "date": "2026-08-18",
+      "p1": false,
+      "app_erp": 37.0,
+      "app_trk": 31.0,
+      "app_cob": 0.8378,
+      "web_erp": 85.0,
+      "web_trk": 76.0,
+      "web_cob": 0.8941
+    },
+    {
+      "date": "2026-08-19",
+      "p1": false,
+      "app_erp": 37.0,
+      "app_trk": 32.0,
+      "app_cob": 0.8649,
+      "web_erp": 85.0,
+      "web_trk": 75.0,
+      "web_cob": 0.8824
+    },
+    {
+      "date": "2026-08-20",
+      "p1": false,
+      "app_erp": 50.0,
+      "app_trk": 45.0,
+      "app_cob": 0.9,
+      "web_erp": 77.0,
+      "web_trk": 71.0,
+      "web_cob": 0.9221
+    },
+    {
+      "date": "2026-08-21",
+      "p1": false,
+      "app_erp": 57.0,
+      "app_trk": 50.0,
+      "app_cob": 0.8772,
+      "web_erp": 71.0,
+      "web_trk": 64.0,
+      "web_cob": 0.9014
+    },
+    {
+      "date": "2026-08-22",
+      "p1": false,
+      "app_erp": 49.0,
+      "app_trk": 45.0,
+      "app_cob": 0.9184,
+      "web_erp": 72.0,
+      "web_trk": 62.0,
+      "web_cob": 0.8611
+    },
+    {
+      "date": "2026-08-23",
+      "p1": false,
+      "app_erp": 46.0,
+      "app_trk": 42.0,
+      "app_cob": 0.913,
+      "web_erp": 80.0,
+      "web_trk": 70.0,
+      "web_cob": 0.875
+    },
+    {
+      "date": "2026-08-24",
+      "p1": false,
+      "app_erp": 48.0,
+      "app_trk": 46.0,
+      "app_cob": 0.9583,
+      "web_erp": 75.0,
+      "web_trk": 68.0,
+      "web_cob": 0.9067
+    },
+    {
+      "date": "2026-08-25",
+      "p1": false,
+      "app_erp": 50.0,
+      "app_trk": 45.0,
+      "app_cob": 0.9,
+      "web_erp": 78.0,
+      "web_trk": 71.0,
+      "web_cob": 0.9103
+    },
+    {
+      "date": "2026-08-26",
+      "p1": false,
+      "app_erp": 39.0,
+      "app_trk": 34.0,
+      "app_cob": 0.8718,
+      "web_erp": 84.0,
+      "web_trk": 74.0,
+      "web_cob": 0.881
+    },
+    {
+      "date": "2026-08-27",
+      "p1": false,
+      "app_erp": 55.0,
+      "app_trk": 51.0,
+      "app_cob": 0.9273,
+      "web_erp": 71.0,
+      "web_trk": 64.0,
+      "web_cob": 0.9014
+    },
+    {
+      "date": "2026-08-28",
+      "p1": false,
+      "app_erp": 43.0,
+      "app_trk": 41.0,
+      "app_cob": 0.9535,
+      "web_erp": 86.0,
+      "web_trk": 73.0,
+      "web_cob": 0.8488
+    },
+    {
+      "date": "2026-08-29",
+      "p1": false,
+      "app_erp": 38.0,
+      "app_trk": 35.0,
+      "app_cob": 0.9211,
+      "web_erp": 84.0,
+      "web_trk": 73.0,
+      "web_cob": 0.869
+    },
+    {
+      "date": "2026-08-30",
+      "p1": false,
+      "app_erp": 61.0,
+      "app_trk": 56.0,
+      "app_cob": 0.918,
+      "web_erp": 65.0,
+      "web_trk": 56.0,
+      "web_cob": 0.8615
+    },
+    {
+      "date": "2026-08-31",
+      "p1": false,
+      "app_erp": 57.0,
+      "app_trk": 51.0,
+      "app_cob": 0.8947,
+      "web_erp": 72.0,
+      "web_trk": 62.0,
+      "web_cob": 0.8611
+    },
+    {
+      "date": "2026-09-01",
+      "p1": false,
+      "app_erp": 44.0,
+      "app_trk": 43.0,
+      "app_cob": 0.9773,
+      "web_erp": 79.0,
+      "web_trk": 71.0,
+      "web_cob": 0.8987
+    },
+    {
+      "date": "2026-09-02",
+      "p1": false,
+      "app_erp": 40.0,
+      "app_trk": 37.0,
+      "app_cob": 0.925,
+      "web_erp": 86.0,
+      "web_trk": 72.0,
+      "web_cob": 0.8372
+    },
+    {
+      "date": "2026-09-03",
+      "p1": false,
+      "app_erp": 49.0,
+      "app_trk": 46.0,
+      "app_cob": 0.9388,
+      "web_erp": 74.0,
+      "web_trk": 62.0,
+      "web_cob": 0.8378
+    },
+    {
+      "date": "2026-09-04",
+      "p1": false,
+      "app_erp": 42.0,
+      "app_trk": 39.0,
+      "app_cob": 0.9286,
+      "web_erp": 79.0,
+      "web_trk": 68.0,
+      "web_cob": 0.8608
+    },
+    {
+      "date": "2026-09-05",
+      "p1": false,
+      "app_erp": 40.0,
+      "app_trk": 35.0,
+      "app_cob": 0.875,
+      "web_erp": 81.0,
+      "web_trk": 72.0,
+      "web_cob": 0.8889
+    },
+    {
+      "date": "2026-09-06",
+      "p1": false,
+      "app_erp": 45.0,
+      "app_trk": 39.0,
+      "app_cob": 0.8667,
+      "web_erp": 83.0,
+      "web_trk": 70.0,
+      "web_cob": 0.8434
+    },
+    {
+      "date": "2026-09-07",
+      "p1": false,
+      "app_erp": 36.0,
+      "app_trk": 33.0,
+      "app_cob": 0.9167,
+      "web_erp": 88.0,
+      "web_trk": 78.0,
+      "web_cob": 0.8864
+    },
+    {
+      "date": "2026-09-08",
+      "p1": false,
+      "app_erp": 32.0,
+      "app_trk": 28.0,
+      "app_cob": 0.875,
+      "web_erp": 89.0,
+      "web_trk": 77.0,
+      "web_cob": 0.8652
+    },
+    {
+      "date": "2026-09-09",
+      "p1": false,
+      "app_erp": 48.0,
+      "app_trk": 45.0,
+      "app_cob": 0.9375,
+      "web_erp": 73.0,
+      "web_trk": 62.0,
+      "web_cob": 0.8493
+    },
+    {
+      "date": "2026-09-10",
+      "p1": false,
+      "app_erp": 42.0,
+      "app_trk": 40.0,
+      "app_cob": 0.9524,
+      "web_erp": 80.0,
+      "web_trk": 72.0,
+      "web_cob": 0.9
+    },
+    {
+      "date": "2026-09-11",
+      "p1": false,
+      "app_erp": 55.0,
+      "app_trk": 52.0,
+      "app_cob": 0.9455,
+      "web_erp": 70.0,
+      "web_trk": 61.0,
+      "web_cob": 0.8714
+    },
+    {
+      "date": "2026-09-12",
+      "p1": false,
+      "app_erp": 42.0,
+      "app_trk": 40.0,
+      "app_cob": 0.9524,
+      "web_erp": 78.0,
+      "web_trk": 70.0,
+      "web_cob": 0.8974
+    },
+    {
+      "date": "2026-09-13",
+      "p1": false,
+      "app_erp": 44.0,
+      "app_trk": 40.0,
+      "app_cob": 0.9091,
+      "web_erp": 83.0,
+      "web_trk": 74.0,
+      "web_cob": 0.8916
+    },
+    {
+      "date": "2026-09-14",
+      "p1": false,
+      "app_erp": 48.0,
+      "app_trk": 46.0,
+      "app_cob": 0.9583,
+      "web_erp": 80.0,
+      "web_trk": 63.0,
+      "web_cob": 0.7875
+    },
+    {
+      "date": "2026-09-15",
+      "p1": false,
+      "app_erp": 51.0,
+      "app_trk": 49.0,
+      "app_cob": 0.9608,
+      "web_erp": 69.0,
+      "web_trk": 59.0,
+      "web_cob": 0.8551
+    },
+    {
+      "date": "2026-09-16",
+      "p1": false,
+      "app_erp": 46.0,
+      "app_trk": 41.0,
+      "app_cob": 0.8913,
+      "web_erp": 78.0,
+      "web_trk": 65.0,
+      "web_cob": 0.8333
+    },
+    {
+      "date": "2026-09-17",
+      "p1": false,
+      "app_erp": 54.0,
+      "app_trk": 46.0,
+      "app_cob": 0.8519,
+      "web_erp": 66.0,
+      "web_trk": 58.0,
+      "web_cob": 0.8788
+    },
+    {
+      "date": "2026-09-18",
+      "p1": false,
+      "app_erp": 43.0,
+      "app_trk": 40.0,
+      "app_cob": 0.9302,
+      "web_erp": 78.0,
+      "web_trk": 64.0,
+      "web_cob": 0.8205
+    },
+    {
+      "date": "2026-09-19",
+      "p1": false,
+      "app_erp": 52.0,
+      "app_trk": 47.0,
+      "app_cob": 0.9038,
+      "web_erp": 70.0,
+      "web_trk": 62.0,
+      "web_cob": 0.8857
+    },
+    {
+      "date": "2026-09-20",
+      "p1": false,
+      "app_erp": 52.0,
+      "app_trk": 49.0,
+      "app_cob": 0.9423,
+      "web_erp": 71.0,
+      "web_trk": 53.0,
+      "web_cob": 0.7465
+    },
+    {
+      "date": "2026-09-21",
+      "p1": false,
+      "app_erp": 66.0,
+      "app_trk": 61.0,
+      "app_cob": 0.9242,
+      "web_erp": 58.0,
+      "web_trk": 54.0,
+      "web_cob": 0.931
+    },
+    {
+      "date": "2026-09-22",
+      "p1": false,
+      "app_erp": 66.0,
+      "app_trk": 61.0,
+      "app_cob": 0.9242,
+      "web_erp": 62.0,
+      "web_trk": 54.0,
+      "web_cob": 0.871
+    },
+    {
+      "date": "2026-09-23",
+      "p1": true,
+      "app_erp": 49.0,
+      "app_trk": 46.0,
+      "app_cob": 0.9388,
+      "web_erp": 73.0,
+      "web_trk": 0.0,
+      "web_cob": 0.0
+    },
+    {
+      "date": "2026-09-24",
+      "p1": false,
+      "app_erp": 58.0,
+      "app_trk": 55.0,
+      "app_cob": 0.9483,
+      "web_erp": 64.0,
+      "web_trk": 59.0,
+      "web_cob": 0.9219
+    },
+    {
+      "date": "2026-09-25",
+      "p1": false,
+      "app_erp": 54.0,
+      "app_trk": 50.0,
+      "app_cob": 0.9259,
+      "web_erp": 70.0,
+      "web_trk": 63.0,
+      "web_cob": 0.9
+    },
+    {
+      "date": "2026-09-26",
+      "p1": false,
+      "app_erp": 64.0,
+      "app_trk": 62.0,
+      "app_cob": 0.9688,
+      "web_erp": 58.0,
+      "web_trk": 53.0,
+      "web_cob": 0.9138
+    },
+    {
+      "date": "2026-09-27",
+      "p1": false,
+      "app_erp": 50.0,
+      "app_trk": 47.0,
+      "app_cob": 0.94,
+      "web_erp": 73.0,
+      "web_trk": 67.0,
+      "web_cob": 0.9178
+    },
+    {
+      "date": "2026-09-28",
+      "p1": false,
+      "app_erp": 57.0,
+      "app_trk": 52.0,
+      "app_cob": 0.9123,
+      "web_erp": 68.0,
+      "web_trk": 61.0,
+      "web_cob": 0.8971
+    },
+    {
+      "date": "2026-09-29",
+      "p1": false,
+      "app_erp": 46.0,
+      "app_trk": 44.0,
+      "app_cob": 0.9565,
+      "web_erp": 81.0,
+      "web_trk": 71.0,
+      "web_cob": 0.8765
+    },
+    {
+      "date": "2026-09-30",
+      "p1": false,
+      "app_erp": 63.0,
+      "app_trk": 59.0,
+      "app_cob": 0.9365,
+      "web_erp": 62.0,
+      "web_trk": 57.0,
+      "web_cob": 0.9194
+    },
+    {
+      "date": "2026-10-01",
+      "p1": true,
+      "app_erp": 62.0,
+      "app_trk": 57.0,
+      "app_cob": 0.9194,
+      "web_erp": 66.0,
+      "web_trk": 0.0,
+      "web_cob": 0.0
+    },
+    {
+      "date": "2026-10-02",
+      "p1": false,
+      "app_erp": 59.0,
+      "app_trk": 53.0,
+      "app_cob": 0.8983,
+      "web_erp": 62.0,
+      "web_trk": 49.0,
+      "web_cob": 0.7903
+    },
+    {
+      "date": "2026-10-03",
+      "p1": false,
+      "app_erp": 60.0,
+      "app_trk": 56.0,
+      "app_cob": 0.9333,
+      "web_erp": 63.0,
+      "web_trk": 53.0,
+      "web_cob": 0.8413
+    },
+    {
+      "date": "2026-10-04",
+      "p1": false,
+      "app_erp": 49.0,
+      "app_trk": 44.0,
+      "app_cob": 0.898,
+      "web_erp": 75.0,
+      "web_trk": 67.0,
+      "web_cob": 0.8933
+    },
+    {
+      "date": "2026-10-05",
+      "p1": false,
+      "app_erp": 51.0,
+      "app_trk": 48.0,
+      "app_cob": 0.9412,
+      "web_erp": 73.0,
+      "web_trk": 61.0,
+      "web_cob": 0.8356
+    },
+    {
+      "date": "2026-10-06",
+      "p1": false,
+      "app_erp": 52.0,
+      "app_trk": 50.0,
+      "app_cob": 0.9615,
+      "web_erp": 70.0,
+      "web_trk": 64.0,
+      "web_cob": 0.9143
+    },
+    {
+      "date": "2026-10-07",
+      "p1": false,
+      "app_erp": 67.0,
+      "app_trk": 65.0,
+      "app_cob": 0.9701,
+      "web_erp": 58.0,
+      "web_trk": 48.0,
+      "web_cob": 0.8276
+    },
+    {
+      "date": "2026-10-08",
+      "p1": true,
+      "app_erp": 53.0,
+      "app_trk": 51.0,
+      "app_cob": 0.9623,
+      "web_erp": 71.0,
+      "web_trk": 0.0,
+      "web_cob": 0.0
+    },
+    {
+      "date": "2026-10-09",
+      "p1": false,
+      "app_erp": 59.0,
+      "app_trk": 55.0,
+      "app_cob": 0.9322,
+      "web_erp": 63.0,
+      "web_trk": 58.0,
+      "web_cob": 0.9206
+    },
+    {
+      "date": "2026-10-10",
+      "p1": false,
+      "app_erp": 56.0,
+      "app_trk": 53.0,
+      "app_cob": 0.9464,
+      "web_erp": 64.0,
+      "web_trk": 59.0,
+      "web_cob": 0.9219
+    },
+    {
+      "date": "2026-10-11",
+      "p1": false,
+      "app_erp": 62.0,
+      "app_trk": 57.0,
+      "app_cob": 0.9194,
+      "web_erp": 67.0,
+      "web_trk": 62.0,
+      "web_cob": 0.9254
+    },
+    {
+      "date": "2026-10-12",
+      "p1": false,
+      "app_erp": 50.0,
+      "app_trk": 46.0,
+      "app_cob": 0.92,
+      "web_erp": 73.0,
+      "web_trk": 67.0,
+      "web_cob": 0.9178
+    },
+    {
+      "date": "2026-10-13",
+      "p1": false,
+      "app_erp": 64.0,
+      "app_trk": 57.0,
+      "app_cob": 0.8906,
+      "web_erp": 61.0,
+      "web_trk": 49.0,
+      "web_cob": 0.8033
+    },
+    {
+      "date": "2026-10-14",
+      "p1": false,
+      "app_erp": 57.0,
+      "app_trk": 56.0,
+      "app_cob": 0.9825,
+      "web_erp": 65.0,
+      "web_trk": 55.0,
+      "web_cob": 0.8462
+    },
+    {
+      "date": "2026-10-15",
+      "p1": false,
+      "app_erp": 73.0,
+      "app_trk": 70.0,
+      "app_cob": 0.9589,
+      "web_erp": 56.0,
+      "web_trk": 45.0,
+      "web_cob": 0.8036
+    },
+    {
+      "date": "2026-10-16",
+      "p1": true,
+      "app_erp": 59.0,
+      "app_trk": 54.0,
+      "app_cob": 0.9153,
+      "web_erp": 64.0,
+      "web_trk": 0.0,
+      "web_cob": 0.0
+    },
+    {
+      "date": "2026-10-17",
+      "p1": false,
+      "app_erp": 58.0,
+      "app_trk": 55.0,
+      "app_cob": 0.9483,
+      "web_erp": 67.0,
+      "web_trk": 63.0,
+      "web_cob": 0.9403
+    },
+    {
+      "date": "2026-10-18",
+      "p1": false,
+      "app_erp": 60.0,
+      "app_trk": 56.0,
+      "app_cob": 0.9333,
+      "web_erp": 69.0,
+      "web_trk": 62.0,
+      "web_cob": 0.8986
+    },
+    {
+      "date": "2026-10-19",
+      "p1": false,
+      "app_erp": 63.0,
+      "app_trk": 58.0,
+      "app_cob": 0.9206,
+      "web_erp": 64.0,
+      "web_trk": 56.0,
+      "web_cob": 0.875
+    }
+  ],
+  "log": [
+    {
+      "data": "2026-09-20",
+      "status": "SUCCESS",
+      "duracao_s": 42.0,
+      "linhas": 429.0
+    },
+    {
+      "data": "2026-09-21",
+      "status": "SUCCESS",
+      "duracao_s": 50.0,
+      "linhas": 437.0
+    },
+    {
+      "data": "2026-09-22",
+      "status": "SUCCESS",
+      "duracao_s": 41.0,
+      "linhas": 414.0
+    },
+    {
+      "data": "2026-09-23",
+      "status": "SUCCESS",
+      "duracao_s": 3.0,
+      "linhas": 0.0
+    },
+    {
+      "data": "2026-09-24",
+      "status": "SUCCESS",
+      "duracao_s": 39.0,
+      "linhas": 428.0
+    },
+    {
+      "data": "2026-09-25",
+      "status": "SUCCESS",
+      "duracao_s": 43.0,
+      "linhas": 481.0
+    },
+    {
+      "data": "2026-09-26",
+      "status": "SUCCESS",
+      "duracao_s": 50.0,
+      "linhas": 402.0
+    },
+    {
+      "data": "2026-09-27",
+      "status": "SUCCESS",
+      "duracao_s": 41.0,
+      "linhas": 509.0
+    },
+    {
+      "data": "2026-09-28",
+      "status": "SUCCESS",
+      "duracao_s": 38.0,
+      "linhas": 465.0
+    },
+    {
+      "data": "2026-09-29",
+      "status": "SUCCESS",
+      "duracao_s": 52.0,
+      "linhas": 468.0
+    },
+    {
+      "data": "2026-09-30",
+      "status": "SUCCESS",
+      "duracao_s": 52.0,
+      "linhas": 466.0
+    },
+    {
+      "data": "2026-10-01",
+      "status": "SUCCESS",
+      "duracao_s": 3.0,
+      "linhas": 0.0
+    },
+    {
+      "data": "2026-10-02",
+      "status": "SUCCESS",
+      "duracao_s": 49.0,
+      "linhas": 420.0
+    },
+    {
+      "data": "2026-10-03",
+      "status": "SUCCESS",
+      "duracao_s": 49.0,
+      "linhas": 398.0
+    },
+    {
+      "data": "2026-10-04",
+      "status": "SUCCESS",
+      "duracao_s": 40.0,
+      "linhas": 507.0
+    },
+    {
+      "data": "2026-10-05",
+      "status": "SUCCESS",
+      "duracao_s": 44.0,
+      "linhas": 453.0
+    },
+    {
+      "data": "2026-10-06",
+      "status": "SUCCESS",
+      "duracao_s": 39.0,
+      "linhas": 457.0
+    },
+    {
+      "data": "2026-10-07",
+      "status": "SUCCESS",
+      "duracao_s": 49.0,
+      "linhas": 427.0
+    },
+    {
+      "data": "2026-10-08",
+      "status": "SUCCESS",
+      "duracao_s": 3.0,
+      "linhas": 0.0
+    },
+    {
+      "data": "2026-10-09",
+      "status": "SUCCESS",
+      "duracao_s": 46.0,
+      "linhas": 474.0
+    },
+    {
+      "data": "2026-10-10",
+      "status": "SUCCESS",
+      "duracao_s": 44.0,
+      "linhas": 461.0
+    },
+    {
+      "data": "2026-10-11",
+      "status": "SUCCESS",
+      "duracao_s": 49.0,
+      "linhas": 507.0
+    },
+    {
+      "data": "2026-10-12",
+      "status": "SUCCESS",
+      "duracao_s": 41.0,
+      "linhas": 506.0
+    },
+    {
+      "data": "2026-10-13",
+      "status": "SUCCESS",
+      "duracao_s": 46.0,
+      "linhas": 406.0
+    },
+    {
+      "data": "2026-10-14",
+      "status": "SUCCESS",
+      "duracao_s": 51.0,
+      "linhas": 452.0
+    },
+    {
+      "data": "2026-10-15",
+      "status": "SUCCESS",
+      "duracao_s": 50.0,
+      "linhas": 418.0
+    },
+    {
+      "data": "2026-10-16",
+      "status": "SUCCESS",
+      "duracao_s": 3.0,
+      "linhas": 0.0
+    },
+    {
+      "data": "2026-10-17",
+      "status": "SUCCESS",
+      "duracao_s": 47.0,
+      "linhas": 441.0
+    },
+    {
+      "data": "2026-10-18",
+      "status": "SUCCESS",
+      "duracao_s": 50.0,
+      "linhas": 465.0
+    },
+    {
+      "data": "2026-10-19",
+      "status": "SUCCESS",
+      "duracao_s": 39.0,
+      "linhas": 461.0
+    }
+  ],
+  "p1": {
+    "dias": [
+      "2026-09-23",
+      "2026-10-01",
+      "2026-10-08",
+      "2026-10-16"
+    ],
+    "cobertura_web_normal_media": 0.878,
+    "cobertura_web_normal_min": 0.7465,
+    "pedidos_web_erp_nos_dias_p1": 274.0,
+    "log_status_nos_dias_p1": [
+      "SUCCESS"
+    ],
+    "log_duracao_p1_s": 3.0,
+    "log_duracao_normal_min_s": 38.0,
+    "log_duracao_normal_max_s": 52.0
+  },
+  "p2": {
+    "variantes_b": [
+      {
+        "utm": "facebook / cpc",
+        "compras": 361.0,
+        "reconhecida": true
+      },
+      {
+        "utm": "meta / cpc,cpc",
+        "compras": 30.0,
+        "reconhecida": false
+      },
+      {
+        "utm": "ig / paid_social",
+        "compras": 29.0,
+        "reconhecida": false
+      },
+      {
+        "utm": "Facebook / cpc",
+        "compras": 29.0,
+        "reconhecida": false
+      },
+      {
+        "utm": "fb / cpc",
+        "compras": 22.0,
+        "reconhecida": false
+      }
+    ],
+    "variantes_a": 1,
+    "compras_meta_b": 471.0,
+    "compras_fora_da_regra_b": 110.0,
+    "share_fora_da_regra_b": 0.2335
+  },
+  "p3": {
+    "canais": [
+      {
+        "canal": "meta",
+        "rotulo": "Meta",
+        "app_share_a": 0.1494,
+        "app_share_b": 0.3245,
+        "web_a": 706.0,
+        "web_b": 460.0,
+        "total_a": 830.0,
+        "total_b": 681.0
+      },
+      {
+        "canal": "google",
+        "rotulo": "Google",
+        "app_share_a": 0.31,
+        "app_share_b": 0.3936,
+        "web_a": 561.0,
+        "web_b": 436.0,
+        "total_a": 813.0,
+        "total_b": 719.0
+      },
+      {
+        "canal": "tiktok",
+        "rotulo": "TikTok",
+        "app_share_a": 0.3173,
+        "app_share_b": 0.3863,
+        "web_a": 185.0,
+        "web_b": 143.0,
+        "total_a": 271.0,
+        "total_b": 233.0
+      }
+    ]
+  },
+  "p4": {
+    "canais": [
+      {
+        "canal": "meta",
+        "rotulo": "Meta",
+        "spend_a": 62003.46,
+        "share_matched_a": 0.9916,
+        "share_sem_nome_a": 0.0,
+        "share_outros_a": 0.0084,
+        "spend_b": 61912.47,
+        "share_matched_b": 1.0,
+        "share_sem_nome_b": 0.0,
+        "share_outros_b": 0.0
+      },
+      {
+        "canal": "google",
+        "rotulo": "Google",
+        "spend_a": 42732.5,
+        "share_matched_a": 1.0,
+        "share_sem_nome_a": 0.0,
+        "share_outros_a": 0.0,
+        "spend_b": 43010.94,
+        "share_matched_b": 1.0,
+        "share_sem_nome_b": 0.0,
+        "share_outros_b": 0.0
+      },
+      {
+        "canal": "tiktok",
+        "rotulo": "TikTok",
+        "spend_a": 24056.95,
+        "share_matched_a": 0.7679,
+        "share_sem_nome_a": 0.2,
+        "share_outros_a": 0.0321,
+        "spend_b": 23817.93,
+        "share_matched_b": 0.2409,
+        "share_sem_nome_b": 0.75,
+        "share_outros_b": 0.0091
+      }
+    ]
+  },
+  "cascata": [
+    {
+      "ordem": 0,
+      "degrau": "Dash · mês anterior",
+      "valor": 719.0,
+      "descricao": "O que a Growth viu no mês anterior",
+      "delta": null
+    },
+    {
+      "ordem": 1,
+      "degrau": "Efeito real (volume Meta)",
+      "valor": 667.0,
+      "descricao": "Se só o volume real do Meta tivesse mudado",
+      "delta": -52.0
+    },
+    {
+      "ordem": 2,
+      "degrau": "P3 · migração pro app",
+      "valor": 531.0,
+      "descricao": "Somando a venda que passou a acontecer no app",
+      "delta": -136.0
+    },
+    {
+      "ordem": 3,
+      "degrau": "P1 · dias sem ingestão",
+      "valor": 463.0,
+      "descricao": "Somando os 4 dias sem dado web",
+      "delta": -68.0
+    },
+    {
+      "ordem": 4,
+      "degrau": "Cobertura normal",
+      "valor": 471.0,
+      "descricao": "Ruído de cobertura do período (≈ neutro)",
+      "delta": 8.0
+    },
+    {
+      "ordem": 5,
+      "degrau": "P2 · UTM fora do padrão = Dash · último mês",
+      "valor": 361.0,
+      "descricao": "Somando as UTMs que a regra exata não reconhece",
+      "delta": -110.0
+    }
+  ]
+}

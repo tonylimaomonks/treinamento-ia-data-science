@@ -1,0 +1,7 @@
+ordem,degrau,vendas_meta_web,descricao
+0,Dash · mês anterior,719.0,O que a Growth viu no mês anterior
+1,Efeito real (volume Meta),667.0,Se só o volume real do Meta tivesse mudado
+2,P3 · migração pro app,531.0,Somando a venda que passou a acontecer no app
+3,P1 · dias sem ingestão,463.0,Somando os 4 dias sem dado web
+4,Cobertura normal,471.0,Ruído de cobertura do período (≈ neutro)
+5,P2 · UTM fora do padrão = Dash · último mês,361.0,Somando as UTMs que a regra exata não reconhece
